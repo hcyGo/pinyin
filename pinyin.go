@@ -20917,6 +20917,7 @@ func Pinyin(utf8 string) string {
 		if intV >= 0x4000 && intV <= 0x9FA5 {
 			py := pymap[intV]
 			py = strings.Split(py, ",")[0]
+			py = strings.Replace(py, "u:", "u", -1)
 			buffer.WriteString(py[:len(py)-1])
 
 		} else {
